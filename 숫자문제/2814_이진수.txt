@@ -1,0 +1,36 @@
+import java.util.*;
+
+
+public class Main {
+	
+	public static void main(String[] args) {
+	
+	String number,reverse;
+	int count;
+	int total = 0;
+	Scanner input = new Scanner(System.in);
+	//System.out.println("이진수 입력 "); 
+	number = input.next();
+	
+	reverse = reverseString(number);
+	
+	//System.out.println("number 값은 : "+number);
+	count = number.length();
+	 
+	 for(int i = 0; i<count; i++){
+		
+		 if(reverse.charAt(i)=='1'){
+	//		 System.out.println("1인 인덱스는 : "+i);
+			 total = total+ (int)Math.pow(2, i);
+		 }else{
+		//	 System.out.println("0인 인덱스는 : "+i);
+		 }
+		
+	 }
+	 System.out.println(total);
+	 	
+	}
+	public static String reverseString(String s){
+		return (new StringBuffer(s)).reverse().toString();
+	}
+}
